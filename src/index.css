@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+@theme {
+  /* Typography — sophisticated serif + clean modern sans */
+  --font-serif: "Playfair Display", "Georgia", "Times New Roman", serif;
+  --font-sans: "Jost", "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+
+  /* Brand palette */
+  --color-mist: #e8f0f2; /* soft blue-gray page background */
+  --color-mist-deep: #dbe7ea;
+  --color-pine: #0e5a57; /* deep teal — primary */
+  --color-pine-light: #2c7a78; /* muted teal — secondary */
+  --color-pine-soft: #d5e6e7; /* pale teal panel */
+  --color-gold: #c6a24b; /* warm gold accent */
+  --color-gold-light: #e9d7a0;
+  --color-ink: #24333a; /* dark charcoal text */
+  --color-ink-soft: #5b6b72; /* muted charcoal */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-mist text-ink font-sans antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Anchor offset so fixed header never covers section headings */
+section[id] {
+  scroll-margin-top: 5.5rem;
+}
+
+/* Accessible focus states */
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ---------- Reveal-on-scroll ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- Hero entrance ---------- */
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.hero-anim {
+  opacity: 0;
+  animation: hero-fade-up 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}
+
+@keyframes hero-zoom {
+  from {
+    transform: scale(1.08);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.hero-zoom {
+  animation: hero-zoom 2.4s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}
+
+/* ---------- Scroll indicator ---------- */
+@keyframes scroll-dot {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(14px);
+    opacity: 0;
+  }
+}
+
+.animate-scroll-dot {
+  animation: scroll-dot 1.6s ease-in-out infinite;
+}
+
+/* ---------- Respect reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal,
+  .hero-anim,
+  .hero-zoom,
+  .animate-scroll-dot {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ---------- Masonry gallery ---------- */
+.masonry {
+  columns: 1;
+  column-gap: 1.25rem;
+}
+@media (min-width: 640px) {
+  .masonry {
+    columns: 2;
+  }
+}
+@media (min-width: 1024px) {
+  .masonry {
+    columns: 3;
+  }
+}
