@@ -44,6 +44,8 @@ index.html       # SEO meta tags + JSON-LD structured data + Google Fonts
 render.yaml      # Render static-site config (optional — dashboard also works)
 scripts/
   generate-placeholders.mjs  # regenerates the branded placeholder images
+  optimize-images.mjs        # resizes/compresses real photos for the web
+  validate-images.mjs        # checks every image in public/images is readable
   smoke-test.mjs             # render-time smoke test
 ```
 
@@ -130,6 +132,18 @@ complete before real photography is available. To regenerate them:
 ```bash
 npm run images
 ```
+
+### Optimizing real photos for the web
+
+After dropping in real photos, resize/compress them for fast loading:
+
+```bash
+npm run optimize
+```
+
+This keeps your filenames (rooms → 1200px, hero → 1920px, etc.), strips EXIF
+metadata, and regenerates the branded fallback image. Run
+`npm run validate` to confirm every image in `public/images/` is readable.
 
 ---
 

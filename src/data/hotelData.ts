@@ -506,11 +506,11 @@ export const hotelData: HotelData = {
   },
 
   /* ---------- Social / future links ----------
-     Add handles here later (e.g. instagram, facebook) and the
-     matching icons will show in the footer when filled in. */
+     Fill these in and the matching social icons appear in the footer.
+     Leave empty ("") to hide an icon. */
   socialLinks: {
-    instagram: '',
-    facebook: '',
+    instagram: 'https://www.instagram.com/nashikcomfortstay_00?igsh=MTZpd2Z4a2J4OWJybw%3D%3D',
+    facebook: 'https://www.facebook.com/NashikComfortStay?rdid=XrCyB9rzd8iuX1WV&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1NQaNJSGuE%2F#',
   },
 
   /* ---------- SEO ---------- */

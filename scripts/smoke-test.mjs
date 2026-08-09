@@ -36,6 +36,8 @@ const assertions = [
   ['directions link', 'google.com/maps/dir'],
   ['maps embed', 'output=embed'],
   ['wa.me link', 'wa.me/917888288655'],
+  ['Instagram link', 'instagram.com/nashikcomfortstay_00'],
+  ['Facebook link', 'facebook.com/NashikComfortStay'],
 ]
 
 let failures = 0
