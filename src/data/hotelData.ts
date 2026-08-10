@@ -474,8 +474,8 @@ export const hotelData: HotelData = {
      When a URL is filled in, the matching "Book on ..." button
      automatically appears on the website. Never invent URLs. */
   bookingLinks: {
-    agoda: '',
-    booking: '',
+    agoda: 'https://www.agoda.com/shivalik-comfort-stay-h91897508/hotel/nashik-in.html?cid=1844104&ds=RDzhUGuNIkrOgCMm',
+    booking: 'https://www.booking.com/hotel/in/shivalik-comfort-stay.html',
     fabHotels: '',
   },
 

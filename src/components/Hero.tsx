@@ -1,5 +1,6 @@
 import { ChevronDown, MapPin } from 'lucide-react'
 import hotelData, { telLink } from '../data/hotelData'
+import BookingPlatformButtons from './BookingPlatformButtons'
 
 function scrollToSection(id: string) {
   const el = document.getElementById(id)
@@ -79,6 +80,8 @@ export default function Hero() {
             {hotelData.hero.secondaryCta}
           </a>
         </div>
+
+        <BookingPlatformButtons className="hero-anim mt-4" />
       </div>
 
       {/* Scroll indicator */}
