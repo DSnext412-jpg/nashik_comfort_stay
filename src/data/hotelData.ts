@@ -210,7 +210,7 @@ export const hotelData: HotelData = {
   /* ---------- Contact ---------- */
   phone: '7888288655',
   phoneDisplay: '78882 88655',
-  email: 'shivalikcomfortstay@gmail.com',
+  email: 'nashikcomfortstay@gmail.com',
 
   /* WhatsApp number for the enquiry button.
      Use the same digits as the phone number, but WITH the country
