@@ -56,9 +56,11 @@ export default function Header() {
           className="flex items-center gap-2.5"
           aria-label="Nashik Comfort Stay — go to top"
         >
-          <span className="flex h-9 w-9 items-center justify-center rounded-md bg-pine font-serif text-sm font-bold text-gold-light">
-            NCS
-          </span>
+          <img
+            src="/images/favcon/favcon.jpg"
+            alt="Nashik Comfort Stay logo"
+            className="h-9 w-9 rounded-md object-cover"
+          />
           <span
             className={`whitespace-nowrap font-serif text-base leading-tight sm:text-lg ${
               scrolled ? 'text-ink' : 'text-white'
