@@ -1,21 +1,3 @@
-/* ============================================================
-   WEB IMAGE OPTIMIZER
-   ------------------------------------------------------------
-   Resizes + compresses every photo in public/images for the web,
-   keeping the filenames (so no code changes are needed).
-
-   Per-folder target max widths:
-     rooms/      1200 px
-     hero/       1920 px
-     hotel/      1200 px
-     location/   1200 px
-     gallery/    1200 px
-
-   Also regenerates the branded fallback image (the system
-   "missing photo" placeholder), which should never be a photo.
-
-   Run with:  node scripts/optimize-images.mjs
-   ============================================================ */
 
 import sharp from 'sharp'
 import { mkdir, readdir, rm, writeFile } from 'node:fs/promises'
