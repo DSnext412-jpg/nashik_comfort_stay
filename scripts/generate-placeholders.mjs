@@ -1,18 +1,4 @@
-/* ============================================================
-   PLACEHOLDER IMAGE GENERATOR
-   ------------------------------------------------------------
-   Generates branded, premium-looking placeholder photographs for
-   every image the website expects, so the site looks complete
-   before real hotel photos are available.
 
-   Run with:  node scripts/generate-placeholders.mjs
-
-   Replace any generated file under public/images/... with the
-   real hotel photograph of the same filename — no code changes
-   needed. See the README for details.
-
-   Uses "sharp" (a devDependency) to rasterize SVG to JPEG.
-   ============================================================ */
 
 import sharp from 'sharp'
 import { mkdir } from 'node:fs/promises'
