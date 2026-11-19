@@ -1,8 +1,3 @@
-# Render static site configuration (optional — can also be configured in the dashboard)
-#
-# For the Render dashboard:
-#   Build Command:  npm install && npm run build
-#   Publish Directory: dist
 
 services:
   - type: web
