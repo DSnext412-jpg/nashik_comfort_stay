@@ -1,6 +1,4 @@
-/* Render-time smoke test.
-   Renders the whole Home page to static markup and asserts the key
-   sections + confirmed hotel facts appear. Run via: node scripts/smoke-test.mjs */
+
 import { renderToStaticMarkup } from 'react-dom/server'
 import { createElement } from 'react'
 
@@ -47,14 +45,12 @@ for (const [label, needle] of assertions) {
   console.log(`${ok ? 'PASS' : 'FAIL'}  ${label}  ->  "${needle}"`)
 }
 
-// Every AC room number present in the rendered page
 for (const num of ['202', '203', '204', '205', '206', '207', '208', '209', '210', '211', '212']) {
   const ok = html.includes(`Room ${num}`)
   if (!ok) failures++
   console.log(`${ok ? 'PASS' : 'FAIL'}  Room number ${num} rendered`)
 }
 
-// The graceful image fallback must exist alongside the build
 import { existsSync } from 'node:fs'
 const fallbackOk = existsSync(new URL('../public/images/placeholders/fallback.jpg', import.meta.url))
 if (!fallbackOk) failures++
